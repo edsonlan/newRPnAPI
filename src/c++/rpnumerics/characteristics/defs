@@ -1,0 +1,11 @@
+RIEMPLOTINC = -I$(RIEMPLOT)
+
+ifeq (,$(findstring DIST,$(SYSDEFINES)))
+CCPROGSRC += curvegen.cc \
+	interface.cc \
+	interpol.cc \
+	plotter.cc
+endif
+
+vpath %.F $(RIEMPLOT)
+vpath %.cc $(RIEMPLOT)

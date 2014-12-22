@@ -1,0 +1,9 @@
+1. Fix up expect() and add next_label(), first_label(), and last_label()
+to label.{h,cc}.  Use these functions in extract_first() and extract_last()
+in Extractable.cc.
+
+2. Get rid of GPL code:  errorhandler has to be removed from multid (perhaps
+replaced by exceptions).
+
+NOTE:  getopt is part of POSIX, so the files getopt.{c,h} were moved to SAVE.
+If getopt is not generally available, it will have to be reinstated.
