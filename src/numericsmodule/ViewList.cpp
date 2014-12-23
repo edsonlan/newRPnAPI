@@ -7,16 +7,16 @@
 
 #include "ViewList.h"
 
-ViewList::ViewList() : curveViewList_(new vector<RpnSolution *>()) {
+ViewList::ViewList() : curveViewList_(new vector<RPnResult *>()) {
 }
 
-void ViewList::add(RpnSolution * curveView) {
+void ViewList::add(RPnResult * curveView) {
 
     curveViewList_->push_back(curveView);
 
 }
 
-RpnSolution * ViewList::get(int n) {
+RPnResult * ViewList::get(int n) {
 
 
     return curveViewList_->at(n);
@@ -48,9 +48,9 @@ void ViewList::clean() {
 
 }
 
-void ViewList::remove(RpnSolution * curveView) {
+void ViewList::remove(RPnResult * curveView) {
 
-    for (std::vector<RpnSolution *>::iterator it = curveViewList_->begin(); it != curveViewList_->end(); ++it) {
+    for (std::vector<RPnResult *>::iterator it = curveViewList_->begin(); it != curveViewList_->end(); ++it) {
 
         if (*it == curveView) {
             curveViewList_->erase(it);

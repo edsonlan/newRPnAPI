@@ -55,11 +55,10 @@ public:
 
     static void removeCurve(int);
     
-    static Transform2D * getTransform();
 
     static ViewList * viewList;
     
-//    static vector<HugoniotCurve *> hugoniotMethods_;
+
     
 
 };

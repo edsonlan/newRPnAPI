@@ -24,6 +24,9 @@ int RpNumerics::curveCounter = 0;
 
 SubPhysics * RpNumerics::physics=NULL;
 
+ ViewList * RpNumerics::viewList=NULL;
+    
+
 //vector <HugoniotCurve *> RpNumerics::hugoniotMethods_=NULL;
 
 
@@ -49,7 +52,6 @@ void RpNumerics::clean(){
     
     
       delete physics;
-      delete transform_;
     
       delete viewList;
     

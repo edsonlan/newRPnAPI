@@ -10,8 +10,8 @@
 
 #
 #	Define executable and/or library name
-PROGNAME = 
-LIBNAME = librpn.so
+PROGNAME = plotRPn
+LIBNAME = 
 
 #
 #	Compilers and linker
@@ -30,7 +30,7 @@ FFLAGS =
 
 #
 #	Libraries to link and special flags. Ex: LDLIBS = -L/lib -lm, LDFLAGS = -fPIC
-LDLIBS =  -L /usr/lib/jvm/java-8-oracle/lib/amd64/ -llapack -lblas -ljawt -lGL -lGLU -lX11
+LDLIBS =  -L /usr/lib/jvm/java-8-oracle/lib/amd64/ -llapack -lblas -lfltk -lfltk_gl -lGL -lGLU -lX11 -lgfortran
 LDFLAGS = -g
 
 #

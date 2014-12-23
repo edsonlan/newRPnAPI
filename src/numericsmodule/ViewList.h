@@ -9,7 +9,7 @@
 #define	VIEWLIST_H
 
 #include <vector>
-#include "RpnSolution.h"
+#include "RPnMethod.h"
 
 using namespace std;
 
@@ -17,21 +17,21 @@ class ViewList {
 public:
     ViewList();
     ViewList(const ViewList& orig);
-    void add(RpnSolution *);
+    void add(RPnResult *);
 
-    void remove(RpnSolution *);
+    void remove(RPnResult *);
 
     void clean();
 
 
-    RpnSolution * get(int);
+    RPnResult * get(int);
 
     int getSize();
 
     virtual ~ViewList();
 private:
 
-    vector<RpnSolution * > * curveViewList_;
+    vector<RPnResult * > * curveViewList_;
 
 };
 
