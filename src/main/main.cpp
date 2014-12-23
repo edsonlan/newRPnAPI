@@ -7,7 +7,7 @@
 
 #include <cstdlib>
 
-#include "TesteGraphGL.h"
+#include "GraphGLPlotter.h"
 
 using namespace std;
 
@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
 
     GUI::init(&argc,argv);
     RpNumerics::init();
-    TesteGraphGL t;
+    GraphGLPlotter t;
     
     GUI::start_loop();
     
