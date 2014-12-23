@@ -14,7 +14,7 @@
  * Includes:
  */
 #include "RealVector.h"
-
+#include "Point.h"
 /*
  * ---------------------------------------------------------------
  * Definitions:
@@ -29,7 +29,7 @@ NOTE :
 @ingroup rpnumerics
 */
 
-class WavePoint : public RealVector{
+class WavePoint : public Point{
 
 private:
 	double sigma_;

@@ -1,5 +1,5 @@
 #include "CoreyQuadSubPhysics.h"
-#include "Hugoniot_Curve.h"
+
 
 CoreyQuadSubPhysics::CoreyQuadSubPhysics() : ThreePhaseFlowSubPhysics(){
 //    muw_parameter = new Parameter(std::string("muw"), 1.0 + 1e-3);

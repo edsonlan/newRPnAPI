@@ -2,7 +2,7 @@
 #define _CONTOUR2P5_METHOD_
 
 #include "HyperCube.h"
-#include "RealSegment.h"
+//#include "RealSegment.h"
 #include "TwoImplicitFunctions.h"
 
 #include <iostream>

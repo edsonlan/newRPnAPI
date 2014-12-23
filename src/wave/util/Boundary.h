@@ -16,11 +16,9 @@
 
 
 #include "RealVector.h"
-#include "mathutil.h"
 #include <iostream>
 #include <vector>
 #include "GridValues.h"
-#include "MyCurve.h"
 
 #define BOUNDARY_INTERSECTION_BOTH_INSIDE    1
 #define BOUNDARY_INTERSECTION_FOUND          0

@@ -2,7 +2,7 @@
 #define _CONTOUR2X2_METHOD_
 
 #include "HyperCube.h"
-#include "RealSegment.h"
+//#include "RealSegment.h"
 #include "ThreeImplicitFunctions.h"
 
 #include <iostream>

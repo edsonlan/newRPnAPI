@@ -6,7 +6,7 @@
  * Includes:
  */
 #include "HyperCube.h"
-#include "RealSegment.h"
+//#include "RealSegment.h"
 #include "HugoniotFunctionClass.h"
 
 #include <iostream>
