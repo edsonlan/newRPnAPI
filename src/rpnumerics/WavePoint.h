@@ -15,6 +15,7 @@
  */
 #include "RealVector.h"
 #include "Point.h"
+#include "WavePointInfo.h"
 /*
  * ---------------------------------------------------------------
  * Definitions:
@@ -32,19 +33,14 @@ NOTE :
 class WavePoint : public Point{
 
 private:
-	double sigma_;
 
+    
+    WavePointInfo * info_;
 public:
-	WavePoint(const int size, const double sigma);
-	WavePoint(const RealVector coords, const double sigma);
-	WavePoint(const int size, double * coords, const double sigma);
-	WavePoint(const WavePoint & copy);
 
-	double sigma(void);
-	void sigma(double sigma);
-	void operator=(double sigma);
-	void operator=(RealVector & coords);
-	void operator=(WavePoint & copy);
+        
+	WavePoint(const RealVector coords, WavePointInfo * );
+
 
 };
 
