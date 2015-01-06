@@ -10,27 +10,27 @@
 #include "Data.h"
 #include "Point.h"
 
-class Segment: public Data {
+class Segment : public Data {
 public:
 
-    
+
     Segment(const RealVector &, const RealVector &);
-const    Data * getElement(int )const;
-    const  list<Data *> * getElements()const;
+    const Data * getElement(int)const;
+    const list<Data *> * getElements()const;
     void addData(Data *);
     void removeData(Data *);
     void clear();
-    
+
     friend std::ostream & operator<<(std::ostream &out, const Segment &r);
-    
-    
+
+
     Segment(const Segment& orig);
     virtual ~Segment();
 private:
 
     list<Data *> * points_;
-    
-    
+
+
 };
 
 #endif	/* SEGMENT_H */

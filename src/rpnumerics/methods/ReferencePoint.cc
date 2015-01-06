@@ -6,6 +6,14 @@ ReferencePoint::ReferencePoint(){
     v = 0;
 }
 
+ReferencePoint::ReferencePoint (const ReferencePoint & refPoint):point(refPoint.point),
+f(refPoint.f),g(refPoint.g),v(refPoint.v){
+    fill_point(point, f, g, v);
+}
+
+
+
+
 ReferencePoint::ReferencePoint(const RealVector &p,
                                const FluxFunction *ff, const AccumulationFunction *gg,
                                const Viscosity_Matrix *vv){

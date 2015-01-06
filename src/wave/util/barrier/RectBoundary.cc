@@ -50,71 +50,7 @@ RectBoundary & RectBoundary::operator=(const RectBoundary & source) {
 
 }
 
-void RectBoundary::extension_curve(const FluxFunction *f, const AccumulationFunction *a,
-        GridValues &gv,
-        int where_constant, int number_of_steps, bool singular,
-        int fam, int characteristic,
-        std::vector<RealVector> &c, std::vector<RealVector> &d) {
-//    c.clear();
-//    d.clear();
 
-//    std::vector<RealVector> seg;
-
-//    RealVector limMin = gv.grid(0, 0);
-////    RealVector limMax = gv.grid(gv.noc[0], gv.noc[1]);
-//    
-
-//    RealVector limMax = gv.grid(gv.grid.rows()-1,gv.grid.cols()-1);
-//    edge_segments(where_constant, number_of_steps, limMin, limMax, seg);
-
-//    Extension_Curve extension_curve;
-
-//    cout<<"Primeiro seg: "<<seg[0]<<endl;
-
-//    cout <<"Ultimo seg: "<<seg[seg.size()-1]<<endl;
-
-//    extension_curve.curve(f, a, gv, characteristic, singular, fam,
-//            seg,
-//            c, d);
-
-    extension_curve(f, a, f, a, gv, where_constant, number_of_steps, singular,
-                    fam, characteristic,
-                    c, d);
-
-    return;
-}
-
-void RectBoundary::extension_curve(const FluxFunction *df, const AccumulationFunction *da, // Over the domain
-                                   const FluxFunction *cf, const AccumulationFunction *ca, // Over the curve 
-                                   GridValues &gv,
-                                   int where_constant, int number_of_steps, bool singular,
-                                   int fam, int characteristic,
-                                   std::vector<RealVector> &c, std::vector<RealVector> &d) {
-
-    c.clear();
-    d.clear();
-
-    std::vector<RealVector> seg;
-
-    RealVector limMin = gv.grid(0, 0);
-//    RealVector limMax = gv.grid(gv.noc[0], gv.noc[1]);
-    
-
-    RealVector limMax = gv.grid(gv.grid.rows()-1,gv.grid.cols()-1);
-    edge_segments(where_constant, number_of_steps, limMin, limMax, seg);
-
-    Extension_Curve extension_curve;
-
-//    cout<<"Primeiro seg: "<<seg[0]<<endl;
-
-//    cout <<"Ultimo seg: "<<seg[seg.size()-1]<<endl;
-
-    extension_curve.curve(df, da, cf, ca,gv, characteristic, singular, fam,
-                          seg,
-                          c, d);
-
-    return;
-}
 
 int RectBoundary::edge_segments(int where_constant, int number_of_steps, const RealVector & limMin, const RealVector & limMax, std::vector<RealVector> &seg) {
     seg.clear();
@@ -190,34 +126,6 @@ int RectBoundary::edge_segments(int where_constant, int number_of_steps, const R
     return 1;
 }
 
-
-
-
-//
-//
-//void RectBoundary::edge_segments(int where_constant, int number_of_steps, std::vector<RealVector> &seg) {
-//
-//
-//}
-
-//void RectBoundary::physical_boundary(std::vector<RealVector> &side) {
-//    RealVector p(2);
-
-//    p(0) = minimums_->component(0); p(1) = minimums_->component(1);
-//    side.push_back(p);
-
-//    p(0) = minimums_->component(0); p(1) = maximums_->component(1);
-//    side.push_back(p);    
-
-//    p(0) = maximums_->component(0); p(1) = maximums_->component(1);
-//    side.push_back(p);    
-
-//    p(0) = maximums_->component(0); p(1) = minimums_->component(1);
-//    side.push_back(p);        
-
-//    return;
-//}
-
 RectBoundary::RectBoundary(const RealVector & minimums, const RealVector & maximums)
 : minimums_(new RealVector(minimums)),
 maximums_(new RealVector(maximums)),
@@ -283,136 +191,11 @@ bool RectBoundary::inside(const RealVector &p) const {
     return in;
 
 
-    //
-    //
-    //
-    //
-    //     double pp[p.size()];
-    //    for (int i = 0; i < p.size(); i++) pp[i] = p.component(i);
-    //
-    //    return inside(pp);
-
-
-
-    //
-    //
-    //
-    //    bool in = true;
-    //    int pos = 0;
-    //
-    //    while (in && pos < minimums().size()) {
-    //        if (p(pos) < minimums()(pos) || p(pos) > maximums()(pos)) in = false;
-    //        pos++;
-    //    }
-    //    cout << "tamanho dentro de inside" << in << " " << p.size() << endl;
-    //    return in;
 }
 
-// Check if a line segment intersects the box. If so, where.
-//
-// Returns:
-//
-//     1: Both points lie within the box.Finland
-//     0: One point lies within the box and the other one is outside.
-//    -1: Both points lie outside the box.
-//
-// The point where the line intersects the box is stored in r (but only when the function
-// returns 0 this point's coordinates are meaningful).
-//
-
-//int RectBoundary::intersection(const RealVector &p, const RealVector &q, RealVector &r)const {
-//
-//    cout << "min" << minimums() << endl;
-//    cout << "max" << maximums() << endl;
-//
-//    if (inside(p) && inside(q)) {
-//
-//        cout << "tamanho de p " << p.size() << " q" << q.size() << " r" << r.size();
-//        return 1;
-//
-//    } else if (!inside(p) && !inside(q)) {
-//        cout << "tamanho de p " << p << " q" << q << " r --------------" << r.size();
-//        return -1;
-//
-//    } else {
-//        cout << "tamanho de p " << p.size() << " q" << q.size() << " r***************" << r.size();
-//        int n = p.size();
-//        double alpha, beta;
-//        int pos = 0;
-//        bool found = false;
-//        r.resize(n);
-//
-//        while (pos < n && !found) {
-//            double d = p(pos) - q(pos);
-//            if (fabs(d) > epsilon * (maximums()(pos) - minimums()(pos))) {
-//                alpha = (minimums()(pos) - q(pos)) / d;
-//                beta = (maximums()(pos) - q(pos)) / d;
-//
-//                if (alpha >= 0.0 && alpha <= 1.0) {
-//                    for (int i = 0; i < n; i++) r(i) = alpha * p(i) + (1.0 - alpha) * q(i);
-//                    found = true;
-//#ifdef _TEST_HYPERBOX_
-//                    printf("ALPHA = %f, beta = %f, pos = %d\n", alpha, beta, pos);
-//#endif
-//                }
-//
-//                if (beta >= 0.0 && beta <= 1.0) {
-//                    for (int i = 0; i < n; i++) r(i) = beta * p(i) + (1.0 - beta) * q(i);
-//                    found = true;
-//#ifdef _TEST_HYPERBOX_
-//                    printf("alpha = %f, BETA = %f, pos = %d\n", alpha, beta, pos);
-//#endif
-//                }
-//            }
-//            pos++;
-//        }
-//
-//        return 0;
-//    }
-//}
 
 
 
-
-// Check if a line segment intersects the box. If so, where.
-//
-// Returns:
-//
-//     1: Both points lie within the box.Finland
-//     0: One point lies within the box and the other one is outside.
-//    -1: Both points lie outside the box.
-//
-// The point where the line intersects the box is stored in r (but only when the function
-// returns 0 this point's coordinates are meaningful).
-//
-// The edge where the intersection occurs is returned in w. For more details, check
-// HyperBox.h.
-//
-
-void RectBoundary::envelope_curve(const FluxFunction *f, const AccumulationFunction *a,
-        GridValues &gv,
-        int where_constant, int number_of_steps, bool singular,
-        std::vector<RealVector> &c, std::vector<RealVector> &d) {
-    c.clear();
-    d.clear();
-
-    std::vector<RealVector> seg;
-    RealVector limMin = gv.grid(0, 0);
-//    RealVector limMax = gv.grid(gv.noc[0], gv.noc[1]);
-    
-    RealVector limMax = gv.grid(gv.grid.rows()-1,gv.grid.cols()-1);
-
-    edge_segments(where_constant, number_of_steps, limMin, limMax, seg);
-
-
-    Envelope_Curve envelope_curve;
-
-    envelope_curve.curve(f, a, gv, singular,
-            seg,
-            c, d);
-
-    return;
-}
 
 int RectBoundary::intersection(const RealVector &p, const RealVector &q, RealVector &r, int &w)const {
 

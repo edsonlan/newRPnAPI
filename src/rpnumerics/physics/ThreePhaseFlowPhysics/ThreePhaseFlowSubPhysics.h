@@ -3,7 +3,7 @@
 
 #include "SubPhysics.h"
 
-#include "IsoTriang2DBoundary.h"
+#include "Three_Phase_Boundary.h"
 #include "Implicit_Extension_Curve.h"
 #include "ImplicitHugoniotCurve.h"
 #include "HugoniotContinuation2D2D.h"

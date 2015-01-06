@@ -80,31 +80,3 @@ int Boundary::intersection(const RealVector &p, const RealVector &q, RealVector 
     }
 }
 
-//void Boundary::(const std::vector<RealVector> &point_on_boundary_side, int side, int n, std::vector<RealVector> &seeds){
-////        if (side == THREE_PHASE_BOUNDARY_SW_ZERO){
-////            // Vertical.
-////            //
-////            point(0) = 0.0;
-////            point(1) = p;
-////        }
-////        else if (side == THREE_PHASE_BOUNDARY_SO_ZERO){
-////            // Horizontal.
-////            //
-////            point(0) = p;
-////            point(1) = 0.0;
-////        }
-////        else if (side == THREE_PHASE_BOUNDARY_SG_ZERO){
-////            // Diagonal.
-////            //
-////            point(0) = p;
-////            point(1) = 1.0 - p;
-////        }
-
-//    std::vector<double> projection;
-//    for (int i = 0; i < point_on_boundary_side.size(); i++) projection.push_back(point_on_boundary_side[i](1));
-//    std::sort(projection.begin(), projection.end());
-
-
-//    return;
-//}
-

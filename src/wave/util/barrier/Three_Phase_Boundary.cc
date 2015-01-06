@@ -10,7 +10,7 @@
  * ---------------------------------------------------------------
  * Includes:
  */
-#include "IsoTriang2DBoundary.h"
+#include "Three_Phase_Boundary.h"
 using namespace std;
 
 /*
@@ -79,46 +79,7 @@ Three_Phase_Boundary::Three_Phase_Boundary(const Three_Phase_Boundary &original)
     C_ = new RealVector(*original.C_);
 }
 
-void Three_Phase_Boundary::envelope_curve(const FluxFunction *f, const AccumulationFunction *a,
-        GridValues &gv,
-        int where_constant, int number_of_steps, bool singular,
-        std::vector<RealVector> &c, std::vector<RealVector> &d) {
-    c.clear();
-    d.clear();
 
-    std::vector<RealVector> seg;
-    edge_segments(where_constant, number_of_steps, seg);
-
-    Envelope_Curve envelope_curve;
-
-    envelope_curve.curve(f, a, gv, singular,
-            seg,
-            c, d);
-
-    return;
-}
-
-void Three_Phase_Boundary::extension_curve(const FluxFunction *f, const AccumulationFunction *a,
-        GridValues &gv,
-        int where_constant, int number_of_steps, bool singular,
-        int fam,int characteristic,
-        std::vector<RealVector> &c, std::vector<RealVector> &d) {
-
-    c.clear();
-    d.clear();
-
-    std::vector<RealVector> seg;
-    edge_segments(where_constant, number_of_steps, seg);
-    Extension_Curve extension_curve;
-   
-    extension_curve.curve(f, a, gv, characteristic, singular, fam,
-                              seg,
-                              c, d);
-    
-    cout<<"c: "<<c.size()<<endl;
-    cout<<"d: "<<d.size()<<endl;
-    return;
-}
 
 Three_Phase_Boundary::~Three_Phase_Boundary() {
     delete pmax;
@@ -153,9 +114,9 @@ const RealVector& Three_Phase_Boundary::maximums(void) const {
     return *pmax;
 }
 
-RealVector Three_Phase_Boundary::intersect(RealVector &p1, RealVector &p2) const {
-    return RealVector(2);
-}
+//RealVector Three_Phase_Boundary::intersect(RealVector &p1, RealVector &p2) const {
+//    return RealVector(2);
+//}
 
 const char * Three_Phase_Boundary::boundaryType() const {
     return "Three_Phase_Boundary";

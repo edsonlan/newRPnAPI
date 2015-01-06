@@ -774,7 +774,7 @@ int HugoniotContinuation::connected_curve(std::vector< std::vector<RealVector> >
 //
 //
 
-#include "IsoTriang2DBoundary.h"
+#include "Three_Phase_Boundary.h"
 void HugoniotContinuation::hugoniot_on_side(double p, int side, double &RHv, double &RHv_prime){
     RealVector point(2);
     RealVector direction(2);

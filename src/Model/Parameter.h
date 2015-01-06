@@ -1,6 +1,7 @@
 #ifndef _PARAMETER_
 #define _PARAMETER_
 
+#include "Subject.h"
 #include <string>
 
 // TODO: Decide if minimum and maximum are the correct solution, since there
@@ -25,7 +26,7 @@
 // All methods within this class should be virtual, so the derived classes can
 // modify them as need be.
 //
-class Parameter {
+class Parameter:public Subject {
     private:
         // Users should not add any private members.
     protected:
@@ -53,7 +54,7 @@ class Parameter {
         virtual void max(double m) {max_ = m; return;}
 
         virtual double value() const {return value_;}
-        virtual void value(double v) {value_ = v; return;}
+        virtual void value(double v) {value_ = v; notify(); return;}
 };
 
 #endif // _PARAMETERS_

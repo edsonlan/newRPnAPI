@@ -30,7 +30,7 @@ FFLAGS =
 
 #
 #	Libraries to link and special flags. Ex: LDLIBS = -L/lib -lm, LDFLAGS = -fPIC
-LDLIBS =  -L /usr/lib/jvm/java-8-oracle/lib/amd64/ -llapack -lblas -lfltk -lfltk_gl -lGL -lGLU -lX11 -lgfortran
+LDLIBS =  -L /usr/lib/jvm/java-8-oracle/lib/amd64/ -L/usr/lib/gcc/x86_64-linux-gnu/4.4/ -llapack -lblas -lfltk -lfltk_gl -lGL -lGLU -lX11 -lgfortran
 LDFLAGS = -g
 
 #

@@ -6,7 +6,7 @@
 #include "Curve.h"
 //#include "Three_Phase_FluxFunction.h"
 #include "ThreePhaseFlowFluxFunction.h"
-#include "IsoTriang2DBoundary.h"
+#include "Three_Phase_Boundary.h"
 #include "Utilities.h"
 
 #define PERMEABILITY_PARAMETERS_OK    0

@@ -30,6 +30,8 @@ class ReferencePoint {
 
         // Default constructor.
         ReferencePoint();
+        
+        ReferencePoint (const ReferencePoint &);
 
         // Constructor. Fills an inital point.
         //

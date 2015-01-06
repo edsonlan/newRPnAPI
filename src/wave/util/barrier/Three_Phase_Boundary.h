@@ -62,18 +62,9 @@ class Three_Phase_Boundary : public Boundary {
         const RealVector& minimums(void) const;
         const RealVector& maximums(void) const;
 
-        RealVector intersect(RealVector &p1, RealVector &p2) const;
+//        RealVector intersect(RealVector &p1, RealVector &p2) const;
 
-        void extension_curve(const FluxFunction *f, const AccumulationFunction *a,
-                             GridValues &gv,
-                             int where_constant, int number_of_steps, bool singular,
-                             int fam, int characteristic,
-                             std::vector<RealVector> &c, std::vector<RealVector> &d);
-
-        void envelope_curve(const FluxFunction *f, const AccumulationFunction *a,
-                            GridValues &gv,
-                            int where_constant, int number_of_steps, bool singular,
-                            std::vector<RealVector> &c, std::vector<RealVector> &d);
+      
 
         // Overload of the equivalent method in the base class.
         //

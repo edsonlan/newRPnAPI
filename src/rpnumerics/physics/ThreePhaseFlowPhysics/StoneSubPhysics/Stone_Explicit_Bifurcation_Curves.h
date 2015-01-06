@@ -3,7 +3,7 @@
 
 #include "Explicit_Bifurcation_Curves.h"
 #include "StoneFluxFunction.h"
-#include "IsoTriang2DBoundary.h"
+#include "Three_Phase_Boundary.h"
 #include "Three_Phase_Flow_Explicit_Bifurcation_Curves.h"
 
 class Stone_Explicit_Bifurcation_Curves : public Three_Phase_Flow_Explicit_Bifurcation_Curves {

@@ -6,7 +6,7 @@
 #include "AccumulationFunction.h"
 #include "RealVector.h"
 #include "eigen.h"
-//#include "Boundary.h"
+#include "Observer.h"
 
 class Boundary;
 
@@ -34,7 +34,7 @@ class Boundary;
 #define RIGHT 13
 #define NONE  14
 
-class GridValues {
+class GridValues: public Observer {
     private:
     protected:
         // Fill the bare minimum of the grid values.
@@ -143,6 +143,14 @@ class GridValues {
 
         const GridValues* next() const;
         const GridValues* prev() const;
+
+        // Computations on the grid need be redone 
+        // upon notification of changes in the model's parameters.
+        //
+        void change(){
+            clear_computations();
+            return;
+        }
 };
 
 #endif // _GRIDVALUES_
