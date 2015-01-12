@@ -29,7 +29,6 @@
 #include "FluxFunction.h"
 #include "AccumulationFunction.h"
 #include "Boundary.h"
-#include "MyCurve.h"
 #include "eigen.h"
 #include "Utilities.h"
 

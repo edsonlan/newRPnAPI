@@ -3,7 +3,7 @@
 
 #include "ImplicitFunction.h"
 #include "ContourMethod.h"
-#include "MyCurve.h"
+
 #include <deque>
 
 // TODO: This line below and the ones to it related will change

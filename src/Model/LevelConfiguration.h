@@ -13,25 +13,25 @@
 #include "ThreePhaseFlowEquationFunctionLevelCurve.h"
 #include "RpNumerics.h"
 
-class LevelConfiguration :public Configuration{
+class LevelConfiguration : public Configuration {
 public:
     LevelConfiguration(const RealVector & initialPoint, int component);
     LevelConfiguration(const LevelConfiguration& orig);
-    
+
     EquationFunctionLevelCurve * getLevelFunction()const;
-   const RealVector & getInitialPoint()const ;
-    int getComponent() const ;
-    
-    
+    const RealVector & getInitialPoint()const;
+    int getComponent() const;
+
+
     virtual ~LevelConfiguration();
 private:
 
     ThreePhaseFlowEquationFunctionLevelCurve * levelCurve_;
-    RealVector *  initialPoint_;
+    RealVector * initialPoint_;
     int component_;
 
-    
-    
+
+
 };
 
 

@@ -2,7 +2,6 @@
 #define _THREEPHASEFLOWMOBILITYLEVELCURVE_
 
 #include "ImplicitFunction.h"
-#include "MyCurve.h"
 #include "ThreePhaseFlowMobility.h"
 #include "ThreePhaseFlowSubPhysics.h"
 

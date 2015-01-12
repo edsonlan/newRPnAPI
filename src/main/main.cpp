@@ -9,8 +9,7 @@
 
 
 #include "GraphGLPlotter.h"
-#include "Collision.h"
-#include "CollisionException.h"
+
 
 using namespace std;
 

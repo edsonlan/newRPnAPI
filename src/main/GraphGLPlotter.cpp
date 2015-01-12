@@ -11,7 +11,7 @@
 #include "RealVector.h"
 #include "CoordsArray.h"
 #include "RPnResult.h"
-#include "Segment.h"
+
 
 #include "LevelConfiguration.h"
 #include "EquationLevelMethod.h"
@@ -71,18 +71,27 @@ void GraphGLPlotter::repaint_proc(void) {
 
         if (curve != 0) {
 
-            for (int i = 0; i < curve->getData()->getElements()->size(); i++) {
+            for (int i = 0; i < curve->getData().getElements().size()-1; i++) {
+                
+                
+                
+                const RealVector p1 = curve->getData().getElement(i);
+                const RealVector p2 = curve->getData().getElement(i+1);
 
-                Segment * segment = (Segment *) curve->getData()->getElement(i);
-
-                Point * p1 = (Point *) segment->getElement(0);
-                Point * p2 = (Point *) segment->getElement(1);
+//                Segment * segment = (Segment *) curve->getData().getElement(i);
+//
+//                Point * p1 = (Point *) segment->getElement(0);
+//                Point * p2 = (Point *) segment->getElement(1);
+                
+                
+                
+//                cout<< p1 << " "<< p2<<endl;
 
                 double coords[4];
-                coords[0] = p1->getCoord().component(0);
-                coords[1] = p1->getCoord().component(1);
-                coords[2] = p2->getCoord().component(0);
-                coords[3] = p2->getCoord().component(1);
+                coords[0] = p1.component(0);
+                coords[1] = p1.component(1);
+                coords[2] = p2.component(0);
+                coords[3] = p2.component(1);
 
                 CoordsArray coordsArray;
                 coordsArray.init(2, 2, coords);

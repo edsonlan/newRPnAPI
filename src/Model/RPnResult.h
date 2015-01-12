@@ -24,16 +24,16 @@ public:
     RPnResult( RPnMethod *,Data *);
     RPnResult(const RPnResult& orig);
 
-    const Data * getData() const;
+    const Data & getData() const;
     
-    virtual void realc() ;
-
     const RPnMethod & getMethod()const ;
+    
+    
+    virtual void recalc() ;
 
     virtual ~RPnResult();
 private:
 
-    Configuration * config_;
     Data*  data_;
     RPnMethod * method_;
 

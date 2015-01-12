@@ -16,7 +16,7 @@
 
 #include "ODE_Solver.h"
 #include "Bisection.h"
-#include "MyCurve.h"
+
 
 // Forward declaration.
 //

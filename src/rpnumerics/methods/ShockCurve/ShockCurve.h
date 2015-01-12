@@ -3,7 +3,6 @@
 
 #include "RarefactionCurve.h"
 #include "HugoniotContinuation.h"
-#include "MyCurve.h"
 #include <vector>
 #include <algorithm>
 

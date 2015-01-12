@@ -14,16 +14,19 @@ using namespace std;
 
 class Data {
 public:
-    Data();
-    virtual const list<Data *> * getElements()const =0;
-    virtual const Data * getElement(int ) const=0;
-    virtual void clear()=0;
-    virtual void addData(Data *){}
-    virtual void removeData(Data *){}
+    Data(vector<RealVector> &) ;
+    const vector<RealVector> & getElements()const;
+    const RealVector & getElement(int)const;
+    void clear() ;
+    void addData(RealVector);
+
 
     Data(const Data& orig);
     virtual ~Data();
 private:
+
+    vector<RealVector> & elements_ ;
+
 
 };
 

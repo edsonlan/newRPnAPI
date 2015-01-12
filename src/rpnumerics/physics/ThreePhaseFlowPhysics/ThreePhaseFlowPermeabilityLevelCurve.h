@@ -2,7 +2,6 @@
 #define _THREEPHASEFLOWPERMEABILITYLEVELCURVE_
 
 #include "ImplicitFunction.h"
-#include "MyCurve.h"
 #include "ThreePhaseFlowPermeability.h"
 #include "ThreePhaseFlowSubPhysics.h"
 

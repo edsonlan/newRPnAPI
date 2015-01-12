@@ -19,11 +19,11 @@ public:
     
     virtual RPnResult * calc() {}
     
-    virtual void recalc(Data *) {}
+    virtual void recalc(Data *) {} //TODO so pode ser chamado pelo recalc do RpResult
     
     const Configuration & getConfiguration() const ;
     
-    Configuration & getConfiguration();
+    
     
 
     virtual ~RPnMethod();
