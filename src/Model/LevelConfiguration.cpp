@@ -13,7 +13,6 @@ initialPoint_(new RealVector(initialPoint)), component_(component) {
 }
 
 LevelConfiguration::LevelConfiguration(const LevelConfiguration& orig) :levelCurve_(new ThreePhaseFlowEquationFunctionLevelCurve(RpNumerics::physics->flux(), RpNumerics::physics->gridvalues())),initialPoint_(new RealVector(*orig.initialPoint_)),component_(orig.component_){
-    cout<<"chamando const de copia de level configuration"<<endl;
 }
 
 LevelConfiguration::~LevelConfiguration() {

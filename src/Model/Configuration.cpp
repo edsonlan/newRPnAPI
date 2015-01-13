@@ -14,8 +14,7 @@ Configuration::Configuration() {
 
 
 Configuration::Configuration(const Configuration& orig) {
-    
-    cout <<"Chamando const copia de configuration"<<endl;
+
 }
 
 Configuration::~Configuration() {

@@ -8,24 +8,26 @@
 #ifndef DATA_H
 #define	DATA_H
 
-#include <list>
+#include <vector>
+#include <iterator>
 #include "RealVector.h"
+
 using namespace std;
 
 class Data {
 public:
-    Data(vector<RealVector> &) ;
+    Data(const vector<RealVector> &) ;
     const vector<RealVector> & getElements()const;
     const RealVector & getElement(int)const;
     void clear() ;
-    void addData(RealVector);
+    void addData(const RealVector );
 
 
     Data(const Data& orig);
     virtual ~Data();
 private:
 
-    vector<RealVector> & elements_ ;
+    vector<RealVector > * elements_ ;
 
 
 };

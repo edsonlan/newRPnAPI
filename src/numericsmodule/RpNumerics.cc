@@ -27,37 +27,23 @@ SubPhysics * RpNumerics::physics=NULL;
  ViewList * RpNumerics::viewList=NULL;
     
 
-//vector <HugoniotCurve *> RpNumerics::hugoniotMethods_=NULL;
-
-
 
 void RpNumerics::init(){
     
     
     physics =  new CoreyQuadSubPhysics ();
-
     
     viewList= new ViewList();
-    
-//    physics->list_of_Hugoniot_methods(hugoniotMethods_);
+
     
     
 }
 
 
 void RpNumerics::clean(){
-    cout<<"Deletando"<<endl;
-  
-  
-    
-    
       delete physics;
     
       delete viewList;
-    
-    
-    
-    
     
     
 }

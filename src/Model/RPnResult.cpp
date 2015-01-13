@@ -23,7 +23,7 @@ void RPnResult::recalc() {
 
 RPnResult::~RPnResult() {
 
-//    delete data_;
+    delete data_;
     delete method_;
 
 

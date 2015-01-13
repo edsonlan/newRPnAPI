@@ -12,26 +12,21 @@
 
 
 class RPnMethod {
-
+    friend class RPnResult;
 public:
 
-    RPnMethod( Configuration *);
+    RPnMethod(Configuration *);
     
     virtual RPnResult * calc() {}
     
-    virtual void recalc(Data *) {} //TODO so pode ser chamado pelo recalc do RpResult
-    
     const Configuration & getConfiguration() const ;
     
-    
-    
-
     virtual ~RPnMethod();
 
 private:
     
-    Configuration * config_;
-   
+     Configuration * config_;
+     virtual void recalc(Data *) {} //TODO so pode ser chamado pelo recalc do RpResult   
 
 };
 

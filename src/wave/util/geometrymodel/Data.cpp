@@ -7,29 +7,43 @@
 
 #include "Data.h"
 
-Data::Data(vector<RealVector> &elements) : elements_(elements) {
+Data::Data(const vector<RealVector > & elements):elements_(new vector<RealVector>(elements)) {
+    
+    
+    
 }
 
 Data::Data(const Data& orig) : elements_(orig.elements_) {
 }
 
-const vector<RealVector> &Data::getElements()const {
-    return elements_;
+const vector<RealVector> & Data::getElements()const {
+    return *elements_;
 }
 
 const RealVector & Data::getElement(int index)const {
 
-    elements_.at(index);
+    elements_->at(index);
 }
 
 void Data::clear() {
-    elements_.clear();
+    elements_->clear();
 }
 
-void Data::addData(RealVector newElement) {
-    elements_.push_back(newElement);
+void Data::addData(const RealVector  newElement) {
+    elements_->push_back(newElement);
 }
 
 Data::~Data() {
+    
+//    for (std::vector<const RealVector &>::iterator it=elements_->begin(); it<elements_->end(); it++) {
+//        
+//        delete &*it;
+//        
+//        
+//    }
+//    
+//    
+    delete elements_;
+    
 }
 

@@ -68,24 +68,16 @@ void GraphGLPlotter::repaint_proc(void) {
 
 
         RPnResult * curve = RpNumerics::viewList->get(i);
+        
+        const vector<RealVector> data = curve->getData().getElements();
 
         if (curve != 0) {
 
-            for (int i = 0; i < curve->getData().getElements().size()-1; i++) {
+            for (int i = 0; i < data.size()/2; i++) {
                 
-                
-                
-                const RealVector p1 = curve->getData().getElement(i);
-                const RealVector p2 = curve->getData().getElement(i+1);
+                const RealVector p1 = curve->getData().getElement(2*i);
 
-//                Segment * segment = (Segment *) curve->getData().getElement(i);
-//
-//                Point * p1 = (Point *) segment->getElement(0);
-//                Point * p2 = (Point *) segment->getElement(1);
-                
-                
-                
-//                cout<< p1 << " "<< p2<<endl;
+                const RealVector p2 = curve->getData().getElement(2*i+1);
 
                 double coords[4];
                 coords[0] = p1.component(0);
@@ -97,11 +89,13 @@ void GraphGLPlotter::repaint_proc(void) {
                 coordsArray.init(2, 2, coords);
                 prims().polyline(coordsArray);
 
-
-
             }
 
 
+        }
+        
+        else {
+            cout <<"Curve is null"<<endl;
         }
 
     }
@@ -126,11 +120,10 @@ void GraphGLPlotter::button_proc(Button button, double xpos, double ypos) {
         RpNumerics::viewList->add(curve);
 
         repaint_proc();
-
     }
 
 
-    //    cout << "tamanho da lista  : " << RpNumerics::viewList->getSize() << endl;
+
 
 }
 
